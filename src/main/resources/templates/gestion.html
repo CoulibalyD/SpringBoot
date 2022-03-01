@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>health</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet"/>
+</head>
+<body class="d-flex flex-column h-100">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main role="main" class="flex-shrink-0" style="font-family: monospace">
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Gestion Personnel</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-md-4">
+     <div class="shadow p-3 mb-5 bg-body rounded">
+             <div align="center"><img th:src="@{pers.png}" width="200" height="200" ></div>
+     
+    <form action="/gestionAdd">
+    <label class="form-label">Nom</label>
+    <input type="text" class="form-control" name="nom">
+    <br>
+  
+    <label class="form-label">Prenom</label>
+    <input type="text" class="form-control" name="prenom">
+    <br>
+  
+    <label class="form-label">Age</label>
+    <input type="text" class="form-control" name="age">
+    <br>
+  
+    <label class="form-label">Sexe</label>
+    <input type="text" class="form-control" name="sexe">
+    <br>
+  
+   <label class="form-label">Fonction</label><br>
+  <select class="form-select" aria-label="Default select example" name="type">
+  <option selected>Medecin</option>
+  <option value="Laborantin">Laborantin</option>
+  <option value="Administrateur">Administrateur</option>
+</select>
+
+<br>
+  
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    <div id="emailHelp" class="form-text"></div>
+  
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    <br>
+  
+	<button type="submit" class="btn btn-success">Creer</button>
+	<button type="button" class="btn btn-primary">Mise a jour</button>
+	<button type="button" class="btn btn-danger">Supprimer</button>
+  <br>
+  
+  
+</form>
+</div>
+  </div>
+  </div>
+</main>
+<br>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

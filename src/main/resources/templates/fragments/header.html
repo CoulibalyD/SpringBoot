@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>health</title>
+</head>
+<body>
+<div >
+<nav class="navbar navbar-expand navbar-dark bg-secondary" th:fragment="header" style="font-family: monospace">
+<a th:href="@{/}"><img th:src="@{logoT.png}" width="80" alt=""  class="d-inline-block align-middle mr-2"></a> 
+    
+    <a class="navbar-brand" th:href="@{/}">Accueil</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+            <!--            <li class="nav-item" th:class="${
+            
+            #httpServletRequest.requestURI.contains('home')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'inscription'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/inscription}">Inscription<span class="sr-only">(current)</span></a>
+            </li>
+           
+             <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('home')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'rdv'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/rdv}">Rendez-vous<span class="sr-only">(current)</span></a>
+            </li> 
+              <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('home')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'consultation'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/consultation}">Consultation<span class="sr-only">(current)</span></a>
+            </li>
+            <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('contact')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'labo'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/labo}">Labo</a>
+            </li>
+              <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('home')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'covid'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/covid}">Covid-19<span class="sr-only">(current)</span></a>
+            </li>
+             <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('contact')} ? 'nav-link active' : 'nav-link'">
+            <li class="nav-item" th:class="${activePage == 'contact'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/contact}">Contact</a>
+            </li>
+            -->
+        </ul>
+    </div>
+</nav>
+</div>
+</body>
+</html>

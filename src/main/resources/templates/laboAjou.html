@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>health</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet"/>
+</head>
+<body class="d-flex flex-column h-100">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main role="main" class="flex-shrink-0">
+    <div class="container mt-5" style="font-family: monospace">
+        <div class="jumbotron">
+            <h1 class="display-4">Laboratoire</h1>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center">
+    <div class="col-md-4">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+    <div align="center"><img th:src="@{viu.webp}" width="150" height="150" ></div>
+        
+    <form  action="/laboAdd" >
+    <label class="form-label">Nom</label>
+    <input type="text" class="form-control" name="nom">
+    <br>
+  
+   <label class="form-label">Etat</label><br>
+  <select class="form-select" aria-label="Default select example" name="etat">
+  <option selected>Nouveau</option>
+  <option value="Defectuer">Defectuer</option>
+  <option value="Disponible">Disponible</option>
+  <option value="Manquant">Manquant</option>
+</select>
+
+<br><br><br>
+  
+  <button type="submit" class="btn btn-success">Ajouter</button>
+  
+      <br>
+ 
+</form>
+ </div>
+  </div>
+   </div>
+</main>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-md-4"><img alt="" th:src="@{labo2.jpg}" width="350" height="300"  ></div>
+<div class="col-md-4 col-md-offset-2 "><img alt="" th:src="@{labo2.jpg}" width="350" height="300"  ></div>
+<div class="col-md-4 col-md-offset-2 "><img alt="" th:src="@{labo2.jpg}" width="350" height="300"  ></div>
+
+</div>
+</div>
+<div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Liste Materiel Labo</h1>
+        </div>
+    </div>
+    <br>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

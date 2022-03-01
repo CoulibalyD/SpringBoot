@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>health</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet"/>
+</head>
+<body class="d-flex flex-column h-100">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main role="main" class="flex-shrink-0" style="font-family: monospace;">
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Consulation</h1>
+        </div>
+    </div>
+    <div class="container mt-1">
+        <div class="jumbotron">
+            <h1 class="display-10">Reception</h1>
+        </div>
+        </div>
+         <div class="container-fluid text-center" >
+     <div><h1 >Liste Rendez-vous</h1></div>
+   <div>
+   		<table class="table table-striped table-hover">
+   				<thead class="thead-dark">
+   				<tr>
+   					<th>NOM</th>
+   					<th>PRENOM</th>
+   					<th>DATE</th>
+   					<th>DESCRIPTION MALADIE</th>
+   				</tr>
+   				</thead>
+   				<tbody>
+   					<th:block th:each="patient : ${listpatient}">
+   					 <tr>
+   					 	<td>[[${patient.nom}]]</td>
+   					 	<td>[[${patient.prenom}]]</td>
+   					    <td>[[${patient.date}]]</td>
+   					 	<td>[[${patient.maladieDesc}]]</td>
+   					 </tr>
+   					</th:block>
+   				</tbody>
+   		</table>
+   </div>
+  </div>
+ <br>
+ <br>
+ <div class="container mt-1">
+        <div class="jumbotron">
+            <h1 class="display-10">Reponse</h1>
+        </div>
+    </div>
+     <div class="row justify-content-center">
+  <div class="col-md-4">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+    <div align="center"><img th:src="@{rd.png}" width="200" height="200" ></div>
+    <form action="/consulAdd">
+    <label class="form-label">Nom</label>
+    <input type="text" class="form-control" name="nomDocteur" >
+    <br>
+ 
+    <label class="form-label">Nom Patient</label>
+    <input type="text" class="form-control" name="nomPatient">
+    <br>
+    
+    <label class="form-label">Date Rende-vous</label>
+    <input type="datetime-local" class="form-control" name="date">
+    <br>
+ 
+  <label for="exampleFormControlTextarea1" class="form-label">Recomandation</label>
+  <textarea class="form-control" name = "recommandation" id="exampleFormControlTextarea1" rows="4"></textarea>
+ <br>
+  
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+      <br>
+  
+</form>
+</div>
+  </div>
+  </div>
+</main>
+<br>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

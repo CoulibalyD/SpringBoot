@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>health</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100">
+<div class="bg-image" 
+     style="background-image:none; ;
+            height: 100vh">
+</div>
+
+<div th:replace="~{fragments/header :: header}"> </div>
+
+
+<main role="main" class="flex-shrink-0" style="font-family: monospace">
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Accueil</h1>
+        <br>
+        <br>
+        </div>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6"><a th:href="@{/consultation}"><img alt="" th:src="@{1.jpg}" width="350" height="350"  >
+     <br>   <br><p>« La santé c'est comme la richesse, il ne suffit pas <br>
+     de l'avoir, il faut savoir la conserver. » « On fait tout <br>
+      pour recouvrer sa santé et bien peu pour la conserver.»<br>
+     « Il n'est aucune chose qui vaille plus que la santé. » <br>
+     « Une bonne santé fait le pauvre aisé. »</p></a>
+        </div>
+       <div class="col-md-6 col-md-offset-3" align="right"> <a th:href="@{/rdv}"><img alt="" th:src="@{patient.png}" width="350" height="350" >
+       <br>   <br> <p align="right">« La santé c'est comme la richesse, il ne suffit pas <br>
+     de l'avoir, il faut savoir la conserver. » « On fait tout <br>
+      pour recouvrer sa santé et bien peu pour la conserver.»<br>
+     « Il n'est aucune chose qui vaille plus que la santé. » <br>
+     « Une bonne santé fait le pauvre aisé. »</p><br> <br><br></a>
+        </div>
+       
+        <div class="col-md-6 col-md-offset-3" ><a th:href="@{/covid}"><img alt="" th:src="@{covid.png}" width="500" height="350"  >
+  <br> <br><p>« La santé c'est comme la richesse, il ne suffit pas <br>
+     de l'avoir, il faut savoir la conserver. » « On fait tout <br>
+      pour recouvrer sa santé et bien peu pour la conserver.»<br>
+     « Il n'est aucune chose qui vaille plus que la santé. » <br>
+     « Une bonne santé fait le pauvre aisé. »»</p> <br>      </div></a>
+     
+         <div class="col-md-6 col-md-offset-3" align="right"><a th:href="@{/labo}"><img alt="" th:src="@{labo2.jpg}" width="350" height="350"  >
+ <br>   <br><p align="right"; >« La santé c'est comme la richesse, il ne suffit pas <br>
+     de l'avoir, il faut savoir la conserver. » « On fait tout <br>
+      pour recouvrer sa santé et bien peu pour la conserver.»<br>
+     « Il n'est aucune chose qui vaille plus que la santé. » <br>
+     « Une bonne santé fait le pauvre aisé. »<br></p></a></div>
+        </div>
+        </div>
+		
+      	
+      
+        <br>
+        <br>
+      
+
+        
+    </div>
+</main>
+
+
+
+<div  th:replace="~{fragments/footer :: footer}"> </div>
+
+
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
